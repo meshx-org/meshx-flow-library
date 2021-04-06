@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "esnext": "src/index.ts",
     "license": "Apache-2.0",
     "homepage": "https://mesh-x.com/",
     "repository": {
@@ -11,9 +12,10 @@
         "url": "https://github.com/meshx-org/meshx-flow.git"
     },
     "scripts": {
-        "postinstall": "tsc"
+        "build": "tsc -d build",
+        "postinstall": "yarn build"
     },
-    "dependecies": {
+    "dependencies": {
         "typescript": "^4.2.3"
     }
 }
