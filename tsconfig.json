@@ -7,6 +7,7 @@
             "esnext"
         ],
         "downlevelIteration": true,
+        "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "strict": false,
@@ -18,7 +19,6 @@
         "declaration": true,
     },
     "include": [
-        "src",
-        "src/react-app-env.d"
+        "src"
     ]
 }
