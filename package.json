@@ -1,0 +1,20 @@
+{
+    "private": false,
+    "name": "@meshx/flow",
+    "version": "0.0.1",
+  
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "license": "Apache-2.0",
+    "homepage": "https://mesh-x.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/meshx-org/meshx-flow.git"
+    },
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^4.2.3"
+    }
+}
