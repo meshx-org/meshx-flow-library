@@ -2,8 +2,8 @@
     "private": false,
     "name": "@meshx/flow",
     "version": "0.0.1",
-    "main": "build/index.js",
-    "types": "build/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "license": "Apache-2.0",
     "homepage": "https://mesh-x.com/",
     "repository": {
@@ -12,9 +12,9 @@
     },
     "scripts": {
         "build": "tsc",
-        "postinstall": "tsc --outDir ./build"
+        "prepack": "yarn build"
     },
-    "devDependencies": {
+    "devDependecies": {
         "typescript": "^4.2.3"
     }
 }
