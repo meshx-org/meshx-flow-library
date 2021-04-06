@@ -11,10 +11,9 @@
         "url": "https://github.com/meshx-org/meshx-flow.git"
     },
     "scripts": {
-        "build": "tsc",
-        "prepack": "yarn build"
+        "postinstall": "tsc"
     },
-    "devDependecies": {
+    "dependecies": {
         "typescript": "^4.2.3"
     }
 }
