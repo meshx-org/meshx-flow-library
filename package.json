@@ -12,7 +12,7 @@
         "url": "https://github.com/meshx-org/meshx-flow.git"
     },
     "scripts": {
-        "build": "tsc -d build",
+        "build": "tsc",
         "postinstall": "yarn build"
     },
     "dependencies": {
