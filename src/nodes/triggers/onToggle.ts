@@ -14,7 +14,21 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { createComponent } from '../../core'
+import { booleanPort } from '../ports'
+
+export const OnToggle = createComponent({
+    id: 'meshx:onToggle',
+    display: {
+        label: 'On Toggle',
+        overloadLabel: 'Record',
+        iconName: 'bolt',
+    },
+    type: 'trigger',
+    inputs: (node) => ({}),
+    outputs: (node) => ({
+        $out: { schema: {}, name: 'Out' },
+        value: { schema: booleanPort, name: 'Value' },
+    }),
+    work: (_node, _inputs, _outputs, flowControls) => flowControls['$out'](),
+})

@@ -14,7 +14,25 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { addOutput, createComponent } from '../../core'
+
+export const OnRecordUpdated = createComponent({
+    id: 'meshx:onRecordUpdated',
+    type: 'trigger',
+    display: {
+        label: 'On Record Updated',
+        iconName: 'bolt',
+    },
+    settings: () => ({
+        collectionId: {
+            title: 'Collection',
+            type: 'text',
+            default: '',
+        },
+    }),
+    inputs: (node) => ({}),
+    outputs: (node) => ({
+        $out: { schema: {}, name: 'Out' },
+    }),
+    work: (node, inputs, outputs, flowControls) => flowControls['$out'](),
+})

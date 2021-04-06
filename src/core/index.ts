@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+export * from './flow'
+export * from './component'
+export * from './io'
+export * from './vm'

@@ -14,7 +14,21 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { createComponent } from '../../core'
+import { stringPort } from '../ports'
+
+export const Const = createComponent({
+    id: 'meshx:const',
+    type: 'data',
+    display: {
+        label: 'Const',
+        iconName: 'suitcase fa-swap-opacity',
+    },
+    inputs: (node) => ({}),
+    outputs: (node) => ({
+        out: { schema: stringPort, name: 'String' },
+    }),
+    work: async (node, inputs, outputs, flowControls) => {
+        outputs['out'].data = 'Hello World'
+    },
+})

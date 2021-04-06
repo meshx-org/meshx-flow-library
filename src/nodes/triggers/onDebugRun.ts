@@ -14,7 +14,18 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { createComponent } from '../../core'
+
+export const OnDebugRun = createComponent({
+    id: 'meshx:onDebugRun',
+    display: {
+        label: 'On Debug Run',
+        iconName: 'bolt',
+    },
+    type: 'trigger',
+    inputs: (node) => ({}),
+    outputs: (node) => ({
+        $out: { schema: {}, name: 'Out' },
+    }),
+    work: (_node, _inputs, _outputs, flowControls) => flowControls['$out'](),
+})

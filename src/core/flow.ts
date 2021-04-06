@@ -14,7 +14,15 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { IFlowData, IFlowTrigger } from '../interfaces'
+
+export const extractTriggers = (flowId: string, flowData: IFlowData) => {
+    return Object.values(flowData.nodes)
+        .filter((node) => node.type === 'trigger')
+        .map<IFlowTrigger>((node) => ({
+            flowId: flowId,
+            nodeId: node.nid,
+            componentId: node.cid,
+            settings: node.meta.settings ?? null,
+        }))
+}

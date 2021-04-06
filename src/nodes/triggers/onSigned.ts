@@ -14,7 +14,16 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { createComponent } from '../..'
+
+export const OnSigned = createComponent({
+    id: 'meshx:onSigned',
+    display: {
+        label: 'On Signed',
+        iconName: 'bolt',
+    },
+    type: 'trigger',
+    inputs: (node) => ({}),
+    outputs: (node) => ({ $out: { schema: {}, name: 'Out' } }),
+    work: (_node, _inputs, _outputs, flowControls) => flowControls['$out'](),
+})

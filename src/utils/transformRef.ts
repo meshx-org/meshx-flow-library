@@ -14,7 +14,18 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+export const replacementFn = (key: string, value: any) => {
+    const prefix = 'http://localhost:3001/automation/v1/integrations'
+    const [integration, uriFrag] = value.split('#')
+    return {
+        $ref: `${prefix}/${integration}/schema#${uriFrag}`,
+    }
+}
+
+export const replaceTypeRefFn = (key: string, value: any) => {
+    const prefix = 'http://localhost:3001/collection/v1/collections'
+    const typeId = value.split()
+    return {
+        $ref: `${prefix}/${typeId}/schema`,
+    }
+}

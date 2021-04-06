@@ -14,7 +14,20 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { INode } from './node'
+
+export interface INodes {
+    [id: string]: INode
+}
+
+export interface IFlowData {
+    version?: string
+    meta?: Record<string, string>
+    nodes: INodes
+}
+
+export interface IFlowTrigger {
+    flowId: string
+    nodeId: string
+    componentId: string
+}

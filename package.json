@@ -7,15 +7,37 @@
     "esnext": "src/index.ts",
     "license": "Apache-2.0",
     "homepage": "https://mesh-x.com/",
+    "author": {
+        "name": "Roland Sz. Kovács",
+        "email": "roland@mesh-x.com",
+        "url": "https://mesh-x.com/"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/meshx-org/meshx-flow.git"
     },
+    "bugs": {
+        "url": "https://github.com/meshx-org/meshx-flow/issues"
+    },
     "scripts": {
         "build": "tsc",
+        "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
+        "format": "prettier --write src",
         "postinstall": "yarn build"
     },
     "dependencies": {
+        "@apidevtools/json-schema-ref-parser": "^9.0.7",
+        "gdeep-replace": "^0.1.0",
+        "json-schema-merge-allof": "^0.8.1",
+        "nanoid": "^3.1.22",
         "typescript": "^4.2.3"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.21.0",
+        "@typescript-eslint/parser": "^4.21.0",
+        "eslint": "^7.23.0",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "prettier": "^2.2.1"
     }
 }

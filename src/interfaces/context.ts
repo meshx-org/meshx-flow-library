@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
-export * from './editor'
+import { IOutputsData, IInputsData } from './component'
+import { INode } from './node'
+
+export interface IContext {
+    callAction?: (node: INode, inpouts: IInputsData, outputs: IOutputsData, integrationId: string, actionId: string) => Promise<any>
+    [key: string]: any
+}

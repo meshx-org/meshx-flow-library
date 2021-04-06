@@ -14,7 +14,13 @@
  * limitations under the License.
  */
 
-export * from './core'
-export * from './interfaces'
-export * from './nodes'
+export * from './node'
+export * from './component'
+
+export * from './meshxSchema.interface'
+
+export * from './context'
+export * from './vm'
 export * from './editor'
+
+export * from './flow'
