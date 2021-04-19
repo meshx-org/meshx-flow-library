@@ -35,7 +35,14 @@ export const ExplodeComponent = createComponent({
     },
     outputs: (node, editor) => {
         const properties = node.meta['schema']
-        return schemaToPorts(properties, editor)
+        //return schemaToPorts(properties, editor)
+
+        return {
+            object: {
+                schema: objectPort,
+                name: 'Object',
+            },
+        }
     },
     /* onIncomingConnection(self, selfKey, other, otherKey) {
         const portProps = other.out[otherKey].portSchema.properties
