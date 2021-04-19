@@ -20,7 +20,7 @@ export const DraftContractComponent = createComponent({
     id: 'meshx:invite-user',
     type: 'action',
     display: {
-        label: 'Debug',
+        label: 'Draft Contract',
         iconName: 'file-contract',
     },
     inputs: (node) => ({
