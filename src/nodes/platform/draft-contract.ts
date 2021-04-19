@@ -17,7 +17,7 @@
 import { createComponent } from '../../core'
 
 export const DraftContractComponent = createComponent({
-    id: 'meshx:invite-user',
+    id: 'meshx:draft-contract',
     type: 'action',
     display: {
         label: 'Draft Contract',
