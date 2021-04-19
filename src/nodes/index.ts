@@ -38,7 +38,6 @@ import { FindIndex } from './list/findIndex'
 import { genIntegrationTriggers } from './integrations/integrationTrigger'
 import { genIntegrationActions } from './integrations/integrationAction'
 
-import { Reroute } from './other/reroute'
 import { Switch } from './flow-control/switch'
 import { DebugComponent } from './other/debug'
 
@@ -48,8 +47,12 @@ import { OnRecordUpdated } from './triggers/onRecordUpdated'
 import { OnSigned } from './triggers/onSigned'
 import { Const } from './other/const'
 
+import { InviteUserComponent } from './platform/invite-user'
+import { DraftContractComponent } from './platform/draft-contract'
+
 export const genComponents = (overload: { actions: any[]; triggers: any[] }) => {
     return [
+        // Events
         OnRecordCreated,
         OnRecordUpdated,
         OnDebugRun,
@@ -86,6 +89,10 @@ export const genComponents = (overload: { actions: any[]; triggers: any[] }) => 
 
         // MeshX Integration
         GetRecord,
+
+        // Platform Integration
+        InviteUserComponent,
+        DraftContractComponent,
 
         // Other Integrations
         ...genIntegrationTriggers(overload.triggers),
